@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Structure</string>
+    <string name="jatuh_tempo">Jatuh tempo</string>
+    <string name="amount">Jumlah</string>
+    <string name="kwitansi">Kwitansi</string>
+    <string name="status">Status</string>
+    <string name="tanggal">Tanggal</string>
+    <string name="no_internet">No internet, Please check your connection</string>
+    <string name="no_data">No data Available</string>
+    <string name="server_error">Server Error</string>
+    <string name="pembayaran">Pembayaran</string>
+</resources>

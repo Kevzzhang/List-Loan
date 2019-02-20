@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_jatuh_tempo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/jatuh_tempo"
+                android:textColor="@color/colorBlackText"
+                android:textSize="12sp"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toTopOf="@id/tv_date"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="@string/amount"
+                android:textColor="@color/colorBlackText"
+                android:textSize="12sp"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="@id/tv_jatuh_tempo"
+                app:layout_constraintBottom_toTopOf="@id/tv_total_amount"
+                app:layout_constraintEnd_toEndOf="@id/tv_total_amount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_jatuh_tempo"
+                app:layout_constraintTop_toTopOf="@id/tv_jatuh_tempo" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_jatuh_tempo"
+                tools:text="12 Sep 2019" />
+
+            <TextView
+                android:id="@+id/tv_total_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="@id/tv_date"
+                app:layout_constraintEnd_toStartOf="@id/layout_kwitansi"
+                app:layout_constraintStart_toEndOf="@id/tv_date"
+                app:layout_constraintStart_toStartOf="@id/tv_amount"
+                app:layout_constraintTop_toBottomOf="@id/tv_amount"
+                app:layout_constraintTop_toTopOf="@id/tv_date"
+                app:layout_constraintVertical_bias="0.925"
+                tools:text="Rp. 1.018.000" />
+
+            <ImageView
+                android:id="@+id/img_check"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="image"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_img_check"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_date" />
+
+            <View
+                android:id="@+id/border"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorWhiteTwo"
+                app:layout_constraintBottom_toBottomOf="@id/img_check"
+                app:layout_constraintEnd_toStartOf="@id/layout_kwitansi"
+                app:layout_constraintStart_toEndOf="@id/img_check"
+                app:layout_constraintTop_toBottomOf="@id/tv_date"
+                app:layout_constraintTop_toTopOf="@id/img_check" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_kwitansi"
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/shape_round_semi_white"
+                app:layout_constraintBottom_toBottomOf="@id/tv_loan_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/border"
+                app:layout_constraintTop_toTopOf="@id/tv_total_amount">
+
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/icon_take_photo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_kwitansi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom"
+                    android:padding="10dp"
+                    android:text="@string/kwitansi"
+                    android:textColor="@color/colorBlackText"
+                    app:fontFamily="@font/open_sans"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_title_loan_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/status"
+                android:textColor="@color/colorBlackText"
+                android:textSize="12sp"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toTopOf="@id/tv_loan_status"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/border" />
+
+            <TextView
+                android:id="@+id/tv_title_loan_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/tanggal"
+                android:textColor="@color/colorBlackText"
+                android:textSize="12sp"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="@id/tv_title_loan_status"
+                app:layout_constraintBottom_toTopOf="@id/tv_loan_date"
+                app:layout_constraintEnd_toStartOf="@id/layout_kwitansi"
+                app:layout_constraintStart_toEndOf="@id/tv_title_loan_status"
+                app:layout_constraintTop_toBottomOf="@id/border"
+                app:layout_constraintTop_toTopOf="@id/tv_title_loan_status" />
+
+            <TextView
+                android:id="@+id/tv_loan_status"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:textColor="@color/colorBlue"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="Dibayar Lunas, tepat waktu" />
+
+            <TextView
+                android:id="@+id/tv_loan_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorBlackText"
+                app:fontFamily="@font/open_sans"
+                app:layout_constraintBottom_toBottomOf="@id/tv_loan_status"
+                app:layout_constraintEnd_toStartOf="@id/layout_kwitansi"
+                app:layout_constraintStart_toEndOf="@id/tv_loan_status"
+                app:layout_constraintTop_toTopOf="@id/tv_loan_status"
+                tools:text="23 Jul 2019" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
